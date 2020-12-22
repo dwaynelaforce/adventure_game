@@ -1,13 +1,17 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class TitleScreen {
+
+public class TitleScreen implements ActionListener {
 	// attributes
 
 	Font titleFont = new Font("Papyrus", Font.PLAIN, 92);
@@ -50,18 +54,28 @@ public class TitleScreen {
 			startButtonLabel = new JLabel("... embark on your journey ...");
 				startButtonLabel.setForeground(Color.red);
 				startButtonLabel.setFont(buttonFont);
+
 			
 			startButton = new JButton("start");
 				startButton.setFont(buttonFont);
 				startButton.setBackground(Color.black);
 				startButton.setForeground(Color.lightGray);
+				startButton.addActionListener(this);
 			startButtonPanel.add(startButtonLabel);
 			startButtonPanel.add(startButton);
 		this.allPanels.add(titlePanel);
 		this.allPanels.add(startButtonPanel);
 		this.allPanels.add(subtitlePanel);
+		
 	}
+	
 	// methods
 	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		EventScreen eventScreen = new EventScreen();
+	
+		System.out.println("hello world");
+	}
 	
 }
