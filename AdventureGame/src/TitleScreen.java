@@ -27,10 +27,14 @@ public class TitleScreen implements ActionListener {
 	JLabel startButtonLabel;
 	JButton startButton;
 	
-	public List<JPanel> allPanels = new ArrayList<JPanel>();
+	GUI gui;
+	
+	public ArrayList<JPanel> allPanels = new ArrayList<JPanel>();
 	
 	// constructor
-	public TitleScreen() {
+	public TitleScreen(GUI gui) {
+		this.gui = gui;
+		
 		titlePanel = new JPanel();
 			titlePanel.setBounds(100, 100, 800, 150);
 			titlePanel.setBackground(Color.darkGray);
@@ -43,7 +47,7 @@ public class TitleScreen implements ActionListener {
 		subtitlePanel = new JPanel();
 			subtitlePanel.setBounds(100, 250, 800, 50);
 			subtitlePanel.setBackground(Color.darkGray);
-			subtitleLabel = new JLabel("by Anindo Khan & Dwayne LaForce | � 2020");
+			subtitleLabel = new JLabel("by Anindo Khan & Dwayne LaForce | (c) 2020");
 				subtitleLabel.setForeground(Color.lightGray);
 				subtitleLabel.setFont(subtitleFont);
 			subtitlePanel.add(subtitleLabel);
@@ -54,8 +58,6 @@ public class TitleScreen implements ActionListener {
 			startButtonLabel = new JLabel("... embark on your journey ...");
 				startButtonLabel.setForeground(Color.red);
 				startButtonLabel.setFont(buttonFont);
-
-			
 			startButton = new JButton("start");
 				startButton.setFont(buttonFont);
 				startButton.setBackground(Color.black);
@@ -67,15 +69,13 @@ public class TitleScreen implements ActionListener {
 		this.allPanels.add(startButtonPanel);
 		this.allPanels.add(subtitlePanel);
 		
+		gui.updateContainer(allPanels);
 	}
 	
 	// methods
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		EventScreen eventScreen = new EventScreen();
-	
-		System.out.println("hello world");
+		TestScreen ts = new TestScreen(gui);
 	}
-	
 }
