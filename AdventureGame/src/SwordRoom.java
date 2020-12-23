@@ -12,12 +12,21 @@ public class SwordRoom extends Room {
 		Choice2Listener c2l = new Choice2Listener();
 //		Choice3Listener c3l = new Choice3Listener();
 		Choice4Listener c4l = new Choice4Listener();
-	
-		this.textArea.setText(String.format(
-			"You have found an apple tree and a sword. Which shall you take?"));
+		if (!player.getInventory().contains("sword") && !player.getInventory().contains("apple"))  {
+			this.textArea.setText(String.format(
+					"You have found apples and a sword. Which shall you take?"));
+		}
+		if(!player.getInventory().contains("apple") && player.getInventory().contains("sword")) {
+			this.textArea.setText(String.format("You sure you dont need apples? "));
+		}
+		if (!player.getInventory().contains("sword") && player.getInventory().contains("apple")) {
+			this.textArea.setText(String.format(
+					"Just take the sword"));
+			}
+		
 		this.textArea.setForeground(Color.red);
 		this.choice1.setText("Get apples");
-		this.player.addToInventory("apples");
+		this.player.addToInventory("apple");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Pick up Sword");
 		this.player.addToInventory("sword");
