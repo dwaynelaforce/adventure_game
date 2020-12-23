@@ -22,7 +22,7 @@ public class TestScreen implements ActionListener {
 		JPanel panel1 = new JPanel();
 			panel1.setBounds(100,100,500,100);
 			panel1.setBackground(Color.pink);
-			JLabel label1 = new JLabel("this is a test");
+			JLabel label1 = new JLabel("Enter quest");
 				label1.setFont(font);
 				label1.setForeground(Color.black);
 			panel1.add(label1);
@@ -30,10 +30,10 @@ public class TestScreen implements ActionListener {
 		JPanel buttonPanel = new JPanel();
 			buttonPanel.setBounds(100, 300, 500, 100);
 			buttonPanel.setBackground(Color.yellow);
-			JButton button = new JButton("click me");
+			JButton button = new JButton("enter");
 			button.setFont(font);
 			button.setForeground(Color.white);
-			button.setBackground(Color.blue);	
+			button.setBackground(Color.black);	
 				button.addActionListener(this);
 			buttonPanel.add(button);
 		
@@ -44,7 +44,8 @@ public class TestScreen implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		TitleScreen ts = new TitleScreen(gui);
+//		TitleScreen ts = new TitleScreen(gui);
+		Home home = new Home(gui);
 		
 	}
 }
