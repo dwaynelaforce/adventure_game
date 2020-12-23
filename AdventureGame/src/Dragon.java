@@ -1,71 +1,58 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 
-public class Home extends Room{
-	
-	
-	
-	
-	
-public Home(GUI gui, Player player) {
+
+public class Dragon extends Room {
+
+	public Dragon(GUI gui, Player player) {
 		super(gui, player);
 		Choice1Listener c1l = new Choice1Listener();
 		Choice2Listener c2l = new Choice2Listener();
 		Choice3Listener c3l = new Choice3Listener();
 		Choice4Listener c4l = new Choice4Listener();
-		this.textArea.setText(" Welcome to the Journey, the path is in your own hands. Decide how you will fulfill your journey");
+	
+		this.textArea.setText(" So you have decided to become a dragon? Congrats, you will have a magical journey filled with courage and strength. You are a beast!"
+				+ "what will you do next");
 		this.textArea.setForeground(Color.red);
-		this.choice1.setText("Wizard");
+		this.choice1.setText("Eat a Rabbit");
 		this.choice1.addActionListener(c1l);
-		this.choice2.setText("Dragon");
+		this.choice2.setText("Kill a bear");
 		this.choice2.addActionListener(c2l);
-		this.choice3.setText("Corgi");
+		this.choice3.setText("Fly");
 		this.choice3.addActionListener(c3l);
-		this.choice4.setText("human");
+		this.choice4.setText("Go Back home");
 		this.choice4.addActionListener(c4l);
 		
 		this.pushPanelsToGUI();
-		
-		
 	}
-		
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Eat Apple");
+			
+			System.out.println("Eat a Rabbit");
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Dragon dragon = new Dragon(gui, player);
-			System.out.println("Dragon");
+			System.out.println("Kill a bear");
 		}
 	}	
 	
 	public class Choice3Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Pick up Sword");
+			System.out.println("Fly");
 		}
 	}	
 	
 	public class Choice4Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Do Backflip");
+			System.out.println("Go Back home");
 		}
-	}	
-	
-	
-	
+	}
 	
 }
