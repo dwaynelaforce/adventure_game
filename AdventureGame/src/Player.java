@@ -11,6 +11,7 @@ public class Player {
 	
 	public Player() {
 		this.setHealth(10);
+		this.inventory = new ArrayList<String>();
 	}
 
 	public int getHealth() {

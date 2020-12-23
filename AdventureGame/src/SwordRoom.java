@@ -16,10 +16,13 @@ public class SwordRoom extends Room {
 		this.textArea.setText(String.format(
 			"You have found an apple tree and a sword. Which shall you take?"));
 		this.textArea.setForeground(Color.red);
-		this.choice1.setText("Eat a Rabbit");
+		this.choice1.setText("Get apples");
+		this.player.addToInventory("apples");
 		this.choice1.addActionListener(c1l);
-		this.choice2.setText("Kill a bear");
+		this.choice2.setText("Pick up Sword");
+		this.player.addToInventory("sword");
 		this.choice2.addActionListener(c2l);
+		this.choice3.setVisible(false);
 		this.choice4.setText("Go Back home");
 		this.choice4.addActionListener(c4l);
 		
@@ -28,21 +31,20 @@ public class SwordRoom extends Room {
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
-			System.out.println("Eat a Rabbit");
+		
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Kill a bear");
+		
 		}
 	}	
 	
 	public class Choice3Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Fly");
+		
 		}
 	}	
 	
