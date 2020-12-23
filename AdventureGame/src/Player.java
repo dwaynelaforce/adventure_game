@@ -11,7 +11,7 @@ public class Player {
 	
 	public Player() {
 		System.out.println("Player created");
-		health = 1;
+		health = 10;
 		System.out.println("Health: " + this.health);
 		inventory = new ArrayList<String>();
 		System.out.println("Inventory created (empty)");

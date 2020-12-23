@@ -35,6 +35,7 @@ public class Room {
 			textArea.setBackground(Color.DARK_GRAY);
 			textArea.setFont(font);
 			textArea.setForeground(Color.white);
+			textArea.setEditable(false);
 			// text area textstring to be assigned in subclass constructor
 		
 		textPanel.add(textArea);
@@ -46,7 +47,7 @@ public class Room {
 		choice1 = new JButton();
 			choice1.setFont(font);
 			choice1.setBackground(Color.gray);
-			choice1.setForeground(Color.cyan);
+			choice1.setForeground(Color.black);
 			// choice1.setText(text); to be assigned in subclass constructor
 		
 		buttonsPanel.add(choice1);
@@ -54,7 +55,7 @@ public class Room {
 		choice2 = new JButton();
 			choice2.setFont(font);
 			choice2.setBackground(Color.gray);
-			choice2.setForeground(Color.cyan);
+			choice2.setForeground(Color.black);
 			// ditto choice1
 		
 		buttonsPanel.add(choice2);
@@ -62,7 +63,7 @@ public class Room {
 		choice3 = new JButton();
 			choice3.setFont(font);
 			choice3.setBackground(Color.gray);
-			choice3.setForeground(Color.cyan);
+			choice3.setForeground(Color.black);
 			// ditto choice1
 		
 		buttonsPanel.add(choice3);
@@ -70,7 +71,7 @@ public class Room {
 		choice4 = new JButton();
 			choice4.setFont(font);
 			choice4.setBackground(Color.gray);
-			choice4.setForeground(Color.cyan);
+			choice4.setForeground(Color.black);
 			// ditto choice1
 		
 		buttonsPanel.add(choice4);
