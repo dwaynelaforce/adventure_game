@@ -8,7 +8,7 @@ public class Apples extends Room {
 	public Apples(GUI gui, Player player) {
 		super(gui, player);
 		this.textArea.setText(String.format(
-				"You picked up some apples!"
+				"You picked up an apple!"
 				));
 			Choice1Listener c1l = new Choice1Listener();
 			this.choice1.setText("next");

@@ -14,9 +14,8 @@ public class SwordRoom extends Room {
 		Choice4Listener c4l = new Choice4Listener();
 		if (!player.getInventory().contains("sword") && !player.getInventory().contains("apple"))  {
 			this.textArea.setText(String.format(
-					"As you walk down a thing gravel path with the grass over grown, you uncover a tree. Youre knees are trembling as you "
-					+ "walk up to it, and you see brigh red-delicous apples growing at every branch. Next to it, a pedistal is there used to get some apples."
-					+ "Coincidentally, there is an old rusty sword laying in the grass.... What shall you do next?"));
+					"As you walk down a thin gravel path with the grass over grown, you uncover a tree. Your knees are trembling as you "
+					+ "walk up to it, and you see bright red-delicous apples growing at every branch. Next to it, there is a pedestal with a rusty sword in it. Which shall you take?"));
 		}
 		else if(!player.getInventory().contains("apple") && player.getInventory().contains("sword")) {
 			this.textArea.setText(String.format("The journey is long and harsh on an empty stomach, and apples are the nourishment a traveler like you needs."
@@ -25,7 +24,7 @@ public class SwordRoom extends Room {
 		}
 		else if (!player.getInventory().contains("sword") && player.getInventory().contains("apple")) {
 			this.textArea.setText(String.format(
-					"The quest shall be danjerous to go unprotected. It is up to you, but sticks and stones only get you so far. "));
+					"The quest shall be dangerous to go unprotected. It is up to you, but sticks and stones only get you so far. "));
 			this.choice1.setVisible(false);
 			}
 		else if (player.getInventory().contains("apple")&& player.getInventory().contains("sword")) {
@@ -35,7 +34,7 @@ public class SwordRoom extends Room {
 			this.choice1.setVisible(false);
 		}
 		this.textArea.setForeground(Color.green);
-		this.choice1.setText("Get apples");
+		this.choice1.setText("Get an apple");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Pick up Sword");
 		this.choice2.addActionListener(c2l);
