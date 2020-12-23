@@ -16,20 +16,25 @@ public class SwordRoom extends Room {
 			this.textArea.setText(String.format(
 					"You have found apples and a sword. Which shall you take?"));
 		}
-		if(!player.getInventory().contains("apple") && player.getInventory().contains("sword")) {
+		else if(!player.getInventory().contains("apple") && player.getInventory().contains("sword")) {
 			this.textArea.setText(String.format("You sure you dont need apples? "));
+			this.choice2.setVisible(false);
 		}
-		if (!player.getInventory().contains("sword") && player.getInventory().contains("apple")) {
+		else if (!player.getInventory().contains("sword") && player.getInventory().contains("apple")) {
 			this.textArea.setText(String.format(
 					"Just take the sword"));
+			this.choice1.setVisible(false);
 			}
-		
-		this.textArea.setForeground(Color.red);
+		else if (player.getInventory().contains("apple")&& player.getInventory().contains("sword")) {
+			this.textArea.setText(String.format(
+					"You have a sword and apples, continue quest"));
+			this.choice2.setVisible(false);
+			this.choice1.setVisible(false);
+		}
+		this.textArea.setForeground(Color.green);
 		this.choice1.setText("Get apples");
-		this.player.addToInventory("apple");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Pick up Sword");
-		this.player.addToInventory("sword");
 		this.choice2.addActionListener(c2l);
 		this.choice3.setVisible(false);
 		this.choice4.setText("Go Back home");
@@ -40,12 +45,14 @@ public class SwordRoom extends Room {
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		
+			player.addToInventory("apple");
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			player.addToInventory("sword");
+			GetSword gs = new GetSword(gui,player);
 		
 		}
 	}	
@@ -64,5 +71,6 @@ public class SwordRoom extends Room {
 			Home home = new Home(gui, player);
 		}
 	}
+	
 	
 }
