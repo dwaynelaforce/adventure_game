@@ -21,14 +21,25 @@ public class Home extends Room {
 			+ "You have no money, but earlier you remember seeing a grove of apple "
 			+ "tress back up the road."
 			));
-		this.choice1.setText("go to apple tree grove");
+		this.choice1.setText("go back");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("try to shove through");
 		this.choice2.addActionListener(c2l);
-		this.choice3.setText("give apple");
-		this.choice3.addActionListener(c3l);
-		this.choice4.setText("stab");
-		this.choice4.addActionListener(c4l);
+		if (player.getInventory().contains("apple")) {
+			this.choice3.setText("give apple");
+			this.choice3.addActionListener(c3l);	
+			this.choice3.setForeground(Color.green);
+		} else {
+			this.choice3.setVisible(false);
+		}
+		if (player.getInventory().contains("sword")) {
+			this.choice4.setText("stab");
+			this.choice4.addActionListener(c4l);
+			this.choice4.setForeground(Color.red);
+		} else {
+			this.choice4.setVisible(false);
+		}
+		
 		this.pushPanelsToGUI();
 	}
 		
