@@ -14,20 +14,23 @@ public class SwordRoom extends Room {
 		Choice4Listener c4l = new Choice4Listener();
 		if (!player.getInventory().contains("sword") && !player.getInventory().contains("apple"))  {
 			this.textArea.setText(String.format(
-					"You have found apples and a sword. Which shall you take?"));
+					"As you walk down a thing gravel path with the grass over grown, you uncover a tree. Youre knees are trembling as you "
+					+ "walk up to it, and you see brigh red-delicous apples growing at every branch. Next to it, a pedistal is there used to get some apples."
+					+ "Coincidentally, there is an old rusty sword laying in the grass.... What shall you do next?"));
 		}
 		else if(!player.getInventory().contains("apple") && player.getInventory().contains("sword")) {
-			this.textArea.setText(String.format("You sure you dont need apples? "));
+			this.textArea.setText(String.format("The journey is long and harsh on an empty stomach, and apples are the nourishment a traveler like you needs."
+					+ "Are you sure you do not want any for the long road ahead? "));
 			this.choice2.setVisible(false);
 		}
 		else if (!player.getInventory().contains("sword") && player.getInventory().contains("apple")) {
 			this.textArea.setText(String.format(
-					"Just take the sword"));
+					"The quest shall be danjerous to go unprotected. It is up to you, but sticks and stones only get you so far. "));
 			this.choice1.setVisible(false);
 			}
 		else if (player.getInventory().contains("apple")&& player.getInventory().contains("sword")) {
 			this.textArea.setText(String.format(
-					"You have a sword and apples, continue quest"));
+					"You have looted the area of all necessary essentials. Now, ponder your quest"));
 			this.choice2.setVisible(false);
 			this.choice1.setVisible(false);
 		}
