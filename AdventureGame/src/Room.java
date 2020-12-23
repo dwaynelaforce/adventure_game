@@ -27,13 +27,14 @@ public class Room {
 		font = new Font("Papyrus", Font.PLAIN, 20);
 		
 		textPanel = new JPanel();
-			textPanel.setBounds(100, 100, 800, 250);
+			textPanel.setBounds(100, 50, 800, 350);
 			textPanel.setBackground(Color.DARK_GRAY);
 		textArea = new JTextArea("", 30, 50);
 			textArea.setLineWrap(true);
+			textArea.setWrapStyleWord(true);
 			textArea.setBackground(Color.DARK_GRAY);
 			textArea.setFont(font);
-			textArea.setForeground(Color.black);
+			textArea.setForeground(Color.white);
 			// text area textstring to be assigned in subclass constructor
 		
 		textPanel.add(textArea);

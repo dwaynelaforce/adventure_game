@@ -1,28 +1,29 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 
-public class Home extends Room{
+public class Home extends Room {
 	
-	
-	
-	
-	
-public Home(GUI gui, Player player) {
+	public Home(GUI gui, Player player) {
 		super(gui, player);
 		Choice1Listener c1l = new Choice1Listener();
 		Choice2Listener c2l = new Choice2Listener();
 		Choice3Listener c3l = new Choice3Listener();
 		Choice4Listener c4l = new Choice4Listener();
-		this.textArea.setText(" Welcome to the Journey, the path is in your own hands. Decide how you will fulfill your journey");
-		this.textArea.setForeground(Color.red);
+		this.textArea.setText(String.format(
+			"You open your eyes. Slowly, as the direct sunlight is a bit blinding. "
+			+ "The outside world is a complete blur at first, but after a few "
+			+ "seconds your sight sharpens. It becomes apparent you are in the back "
+			+ "of a horse-drawn wagon, driven by a soldier in imperial garb. "
+			+ "Your hands are tied with rope. You're not alone- there are three "
+			+ "others in the cart- hands bound just like yours, but one is dressed in "
+			+ "fine clothing and also gagged with a piece of cloth."
+			+ "%n"
+			+ "\"Hey, you. You’re finally awake. You were trying to cross the border, "
+			+ "right?  Walked right into that Imperial ambush, same as us, and that "
+			+ "thief over there...\" "
+			));
 		this.choice1.setText("Wizard");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Dragon");
@@ -31,16 +32,14 @@ public Home(GUI gui, Player player) {
 		this.choice3.addActionListener(c3l);
 		this.choice4.setText("human");
 		this.choice4.addActionListener(c4l);
-		
 		this.pushPanelsToGUI();
-		
-		
 	}
 		
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Eat Apple");
+			System.out.println("Wizard");
+			Wizard wizard = new Wizard(gui, player);
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
