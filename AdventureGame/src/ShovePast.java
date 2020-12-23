@@ -2,60 +2,54 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+public class ShovePast extends Room{
 
-public class Home extends Room {
-	
-	public Home(GUI gui, Player player) {
+	public ShovePast(GUI gui, Player player) {
 		super(gui, player);
+		
+		player.setHealth(player.getHealth() - 1);
+		
 		this.textArea.setText(String.format(
-			"As you walk along the forest road, you come upon a "
-			+ "small, wooden bridge spanning a deep ravine. "
-			+ "Between you and the bridge is a big ugly troll. %n"
-			+ "He says \"My toll to cross this here bridge is 5 copper pieces. "
-			+ "Man, I\'m hungry though.  I would waive my fee if you had something "
-			+ "to eat...\" %n"
-			+ "You have no money, but earlier you remember seeing a grove of apple "
-			+ "tress back up the road."
-			));
+				"The troll easily slaps you back.  You take 1 damage."
+				+ "%n"
+				+ "%n"
+				+ "Health: %o", player.getHealth()
+				));
 		Choice1Listener c1l = new Choice1Listener();
-		this.choice1.setText("go back");
+		this.choice1.setText("next");
 		this.choice1.addActionListener(c1l);
 		Choice2Listener c2l = new Choice2Listener();
-		this.choice2.setText("try to shove past");
+		this.choice2.setText("");
 		this.choice2.addActionListener(c2l);
 		Choice3Listener c3l = new Choice3Listener();
-		this.choice3.setText("give apple");
+		this.choice3.setText("");
 		this.choice3.addActionListener(c3l);	
 		this.choice3.setForeground(Color.green); // optional button text color change
 		Choice4Listener c4l = new Choice4Listener();
-		this.choice4.setText("stab");
+		this.choice4.setText("");
 		this.choice4.addActionListener(c4l);
 		this.choice4.setForeground(Color.red); // optional button text color change
 		
 		// logic
 		
-		if (!player.getInventory().contains("apple")) {
-			this.choice3.setVisible(false);
-		}
-		if (!player.getInventory().contains("sword")) {
-			this.choice4.setVisible(false);
-		}
+		this.choice2.setVisible(false);
+		this.choice3.setVisible(false);
+		this.choice4.setVisible(false);
 		
 		// update GUI
 		
 		this.pushPanelsToGUI();
 	}
-		
+			
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {	
-			SwordRoom sr = new SwordRoom(gui,player);
+			Home home = new Home(gui, player);
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			ShovePast sp = new ShovePast(gui, player);
 		}
 	}	
 	
@@ -71,7 +65,6 @@ public class Home extends Room {
 		}
 	}	
 	
-	
-	
-	
 }
+
+
