@@ -32,7 +32,7 @@ public class TownEntrance extends Room {
 		
 		// logic
 		if (!player.inventory.contains("apple")) {
-			choice2.setVisible(false);
+			choice3.setVisible(false);
 		}
 		// update GUI		
 		this.pushPanelsToGUI();
