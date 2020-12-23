@@ -46,6 +46,7 @@ public class SwordRoom extends Room {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			player.addToInventory("apple");
+			Apples apples = new Apples(gui, player);
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
