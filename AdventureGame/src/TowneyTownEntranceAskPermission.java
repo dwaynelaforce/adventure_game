@@ -2,19 +2,17 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class StabTroll extends Room{
 
-	public StabTroll(GUI gui, Player player) {
+
+public class TowneyTownEntranceAskPermission extends Room {
+
+	public TowneyTownEntranceAskPermission(GUI gui, Player player) {
 		super(gui, player);
 		this.textArea.setText(String.format(
-			" \" Ouch,\" the troll exclaims, as he keels over and begins to bleed profusely onto the grass."
-			+ "%n %n"
-			+ "As the light fades from his eyes, you feel a twinge of guilt... "
-			+ "%n %n"
-			+ "You are now free to cross the bridge."
+			" \"No.\" "
 			));
 		Choice1Listener c1l = new Choice1Listener();
-		this.choice1.setText("cross the bridge");
+		this.choice1.setText("next");
 		this.choice1.addActionListener(c1l);
 		
 		// logic
@@ -22,6 +20,7 @@ public class StabTroll extends Room{
 		choice2.setVisible(false);
 		choice3.setVisible(false);
 		choice4.setVisible(false);
+		
 		// update GUI
 		
 		this.pushPanelsToGUI();
@@ -29,7 +28,7 @@ public class StabTroll extends Room{
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {	
-			CrossBridge cb = new CrossBridge(gui, player);
+			TownEntrance te = new TownEntrance(gui, player);
 		}
 	}	
 }

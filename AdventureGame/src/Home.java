@@ -70,6 +70,7 @@ public class Home extends Room {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			player.removeFromInventory("apple");
+			player.addToInventory("goodwill");
 			GiveApple giveApple = new GiveApple(gui, player);
 		}
 	}	
@@ -77,6 +78,9 @@ public class Home extends Room {
 	public class Choice4Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			player.removeFromInventory("sword");
+			player.addToInventory("bloody sword");
+			player.addToInventory("guilt");
 			StabTroll st = new StabTroll(gui, player);
 		}
 	}	

@@ -33,7 +33,7 @@ public class GiveApple extends Room{
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {	
-			
+			CrossBridge cb = new CrossBridge(gui, player);
 		}
 	}	
 }
