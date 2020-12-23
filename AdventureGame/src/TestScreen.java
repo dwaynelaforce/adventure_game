@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class TestScreen implements ActionListener {
 
 	GUI gui;
-	
+	Player player;
 	public TestScreen(GUI gui) {
 		this.gui = gui;
 		
@@ -44,8 +44,7 @@ public class TestScreen implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		Home home = new Home(gui);
+		Home home = new Home(gui, player);
 		
 	}
 }

@@ -77,7 +77,7 @@ public class TitleScreen implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Player player = new Player();
-		
-		TestScreen ts = new TestScreen(gui);
+		Home home = new Home(gui, player);
+
 	}
 }

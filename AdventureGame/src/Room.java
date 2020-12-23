@@ -22,14 +22,16 @@ public class Room {
 	public Room(GUI gui, Player player) {
 		this.gui = gui;
 		this.player = player;
+		this.panels = new ArrayList<JPanel>();
 		
 		font = new Font("Papyrus", Font.PLAIN, 20);
 		
 		textPanel = new JPanel();
 			textPanel.setBounds(100, 100, 800, 250);
-			textPanel.setBackground(Color.lightGray);
-		textArea = new JTextArea("", 10, 10);
+			textPanel.setBackground(Color.DARK_GRAY);
+		textArea = new JTextArea("", 30, 50);
 			textArea.setLineWrap(true);
+			textArea.setBackground(Color.DARK_GRAY);
 			textArea.setFont(font);
 			textArea.setForeground(Color.black);
 			// text area textstring to be assigned in subclass constructor
@@ -38,7 +40,7 @@ public class Room {
 		
 		buttonsPanel = new JPanel();
 			buttonsPanel.setBounds(100, 400, 800, 100);
-			buttonsPanel.setBackground(Color.lightGray);
+			buttonsPanel.setBackground(Color.DARK_GRAY);
 		
 		choice1 = new JButton();
 			choice1.setFont(font);
