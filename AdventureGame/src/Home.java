@@ -35,29 +35,24 @@ public class Home extends Room {
 	public class Choice1Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Wizard");
-			Wizard wizard = new Wizard(gui, player);
+			
 		}
 	}	
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Dragon dragon = new Dragon(gui, player);
-			System.out.println("Dragon");
 		}
 	}	
 	
 	public class Choice3Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Pick up Sword");
 		}
 	}	
 	
 	public class Choice4Listener implements ActionListener{
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Do Backflip");
+		public void actionPerformed(ActionEvent e) {		
 		}
 	}	
 	

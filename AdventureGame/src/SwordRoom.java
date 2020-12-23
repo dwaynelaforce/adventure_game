@@ -4,19 +4,17 @@ import java.awt.event.ActionListener;
 
 
 
-public class Dragon extends Room {
+public class SwordRoom extends Room {
 
-	public Dragon(GUI gui, Player player) {
+	public SwordRoom(GUI gui, Player player) {
 		super(gui, player);
 		Choice1Listener c1l = new Choice1Listener();
 		Choice2Listener c2l = new Choice2Listener();
-		Choice3Listener c3l = new Choice3Listener();
+//		Choice3Listener c3l = new Choice3Listener();
 		Choice4Listener c4l = new Choice4Listener();
 	
 		this.textArea.setText(String.format(
-			" So you have decided to become a dragon? Congrats, "
-			+ "you will have a magical journey filled with courage "
-			+ "and strength. You are a beast! what will you do next"));
+			"You have found a ));
 		this.textArea.setForeground(Color.red);
 		this.choice1.setText("Eat a Rabbit");
 		this.choice1.addActionListener(c1l);
