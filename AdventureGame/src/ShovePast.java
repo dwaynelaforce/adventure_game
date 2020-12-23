@@ -7,13 +7,11 @@ public class ShovePast extends Room{
 	public ShovePast(GUI gui, Player player) {
 		super(gui, player);
 		
-		player.setHealth(player.getHealth() - 1);
-		
 		this.textArea.setText(String.format(
 				"The troll easily slaps you back.  You take 1 damage."
 				+ "%n"
 				+ "%n"
-				+ "Health: %o", player.getHealth()
+				+ "Health: " + player.health
 				));
 		Choice1Listener c1l = new Choice1Listener();
 		this.choice1.setText("next");

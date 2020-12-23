@@ -55,7 +55,12 @@ public class Home extends Room {
 	public class Choice2Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			ShovePast sp = new ShovePast(gui, player);
+			player.damagePlayer(1, gui);
+			if (player.health <= 0) {
+				PlayerDeath pd = new PlayerDeath(gui, player);
+			} else {
+				ShovePast sp = new ShovePast(gui, player);
+			}
 		}
 	}	
 	

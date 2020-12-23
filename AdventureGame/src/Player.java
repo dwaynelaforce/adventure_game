@@ -10,29 +10,34 @@ public class Player {
 	// constructor
 	
 	public Player() {
-		this.setHealth(10);
-		this.inventory = new ArrayList<String>();
-	}
-
-	public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
+		System.out.println("Player created");
+		health = 1;
+		System.out.println("Health: " + this.health);
+		inventory = new ArrayList<String>();
+		System.out.println("Inventory created (empty)");
 	}
 
 	public ArrayList<String> getInventory() {
+		System.out.println("current inventory: " + inventory.toString());
 		return inventory;
 	}
 
 	public void addToInventory(String item) {
-		this.inventory.add(item);
+		inventory.add(item);
+		System.out.println(item + " added to player inventory");
 	}
 	
 	public void removeFromInventory(String item) {
-		this.inventory.remove(item);
+		inventory.remove(item);
+		System.out.println(item + " removed from player inventory");
 	}
 	
+	public void damagePlayer(int dmg, GUI gui) {
+		health = health - dmg;
+		System.out.println(health);
+		if (health <= 0) {
+			System.out.println("player has died");
+		}
+	}
 	
 }
