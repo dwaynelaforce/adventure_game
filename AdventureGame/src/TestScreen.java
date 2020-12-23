@@ -44,7 +44,7 @@ public class TestScreen implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		TitleScreen ts = new TitleScreen(gui);
+		
 		Home home = new Home(gui);
 		
 	}
