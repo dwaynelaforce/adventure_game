@@ -34,8 +34,8 @@ public class Home extends Room {
 		
 	public class Choice1Listener implements ActionListener{
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			
+		public void actionPerformed(ActionEvent e) {	
+			SwordRoom sr = new SwordRoom(gui,player);
 		}
 	}	
 	public class Choice2Listener implements ActionListener{

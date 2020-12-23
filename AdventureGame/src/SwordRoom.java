@@ -14,14 +14,12 @@ public class SwordRoom extends Room {
 		Choice4Listener c4l = new Choice4Listener();
 	
 		this.textArea.setText(String.format(
-			"You have found a ));
+			"You have found an apple tree and a sword. Which shall you take?"));
 		this.textArea.setForeground(Color.red);
 		this.choice1.setText("Eat a Rabbit");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Kill a bear");
 		this.choice2.addActionListener(c2l);
-		this.choice3.setText("Fly");
-		this.choice3.addActionListener(c3l);
 		this.choice4.setText("Go Back home");
 		this.choice4.addActionListener(c4l);
 		
