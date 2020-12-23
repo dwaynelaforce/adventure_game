@@ -33,13 +33,13 @@ public class SwordRoom extends Room {
 			this.choice2.setVisible(false);
 			this.choice1.setVisible(false);
 		}
-		this.textArea.setForeground(Color.green);
+//		this.textArea.setForeground(Color.);
 		this.choice1.setText("Get an apple");
 		this.choice1.addActionListener(c1l);
 		this.choice2.setText("Pick up Sword");
 		this.choice2.addActionListener(c2l);
 		this.choice3.setVisible(false);
-		this.choice4.setText("Go Back home");
+		this.choice4.setText("Go Back to the Bridge");
 		this.choice4.addActionListener(c4l);
 		
 		this.pushPanelsToGUI();
